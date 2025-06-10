@@ -7,9 +7,6 @@ data/_pipeline_/*
 data/_cluster_/*
 !data/_cluster_/Notes.md
 
-!storage/models/Notes.md
-!storage/results/Notes.md
-
 # Outputs
 results/theWell_TurbRadLay2D/outputs/*
 results/theWell_MHD64/outputs/*
@@ -17,7 +14,9 @@ results/JHTDB_128tra/outputs/*
 
 # Storage/backups
 storage/*
-#!storage/_pipeline_/Notes.md
+!storage/models/Notes.md
+!storage/results/Notes.md
+
 wandb/
 wandb_sweep_config.pkl
 
