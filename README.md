@@ -30,8 +30,7 @@ Models are saved in **`storage/models`** with a unique ID (data+time).
 
 Sampling can be launched by running **`sampling.py`** and specifying a list of IDs (trained models).
 
-Pre-trained models used for the paper can be downloaded at https://nextcloud.centralesupelec.fr/f/10550179, 
-https://nextcloud.centralesupelec.fr/f/10550173 and https://nextcloud.centralesupelec.fr/f/10550188.
+Pre-trained models used for the paper can be downloaded at https://nextcloud.centralesupelec.fr/s/SEqxqF9XoYY5JXF
 (3`.zip` files, paste model/ID directories in **`storage/models.py`**).
 A list of associated IDs can be found in **`results/<dataset_name>/Notes.md`**.
 
