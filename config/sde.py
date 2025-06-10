@@ -1,5 +1,5 @@
 
-sde_name = "vpsde"
+sde_name = "vpsde"  # "vesde", "vpsde", "subvpsde"
 
 num_scales = 1000
 T_max = 1.

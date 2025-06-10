@@ -20,4 +20,20 @@ source activate SM-Fluid-Pred
 
 Dataset can be automatically downloaded by running **`data/JHTDB/download.ipynb`**, **`data/the_Well/download.ipynb`**.
 
-Run **`data/JHTDB/clustering.ipynb`** and **`data/the_Well/clustering.ipynb`** for data process.
+Run **`data/JHTDB/clustering.ipynb`** and **`data/the_Well/clustering.ipynb`** for data processing.
+
+### _Training and sampling_
+
+Train a model by running **`training.py`**.
+Dataset choice and hyperparameter values can be changed in the config directory.
+Models are saved in **`storage/models`** with a unique ID (data+time).
+
+Sampling can be launched by running **`sampling.py`** and specifying a list of IDs (trained models).
+
+Pre-trained models used for the paper can be downloaded on: 
+(paste model/ID directories in **`storage/models.py`**).
+A list of associated IDs can be found in **`results/<dataset_name>/Notes.md`**.
+
+Graphs and tables can be obtained in **`results/<dataset_name>/graphs.ipynb`** and 
+**`results/<dataset_name>/tables.ipynb`** (once sampling is done).
+
