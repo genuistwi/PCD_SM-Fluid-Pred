@@ -1,33 +1,23 @@
-# PCD_SM-Fluid-Pred
+# Autoregressive regularized score-based diffusion models for multi-scenarios fluid flow prediction
 
-### Installation details
+**Credits**: Wilfried GENUIST | **Contact**: wilfried.genuist@centralesupelec.fr | **Preprint**: https://arxiv.org/abs/2505.24145.
 
-For export:
-conda env export | grep -v "^prefix: " > environment.yml
 
-For import:
+## <u>Installation details</u> (tested on Linux-Ubuntu 22.+, python 3.10)
+
+- Install libraries via conda:
+```
 conda env create -f environment.yml
+```
+- Activate environment:
+```
+source activate SM-Fluid-Pred
+```
 
-conda remove -n SM-Fluid-Pred --all
+## <u>Testing and running</u>
 
-pdebench & theWell need python 3.10
+### _Downloading data and formatting_
 
-python 3.10
+Dataset can be automatically downloaded by running **`data/JHTDB/download.ipynb`**, **`data/the_Well/download.ipynb`**.
 
-PipLy
-
-torch 1.13.0
-pdebench
-the_well
-the_well[benchmark]
-jupyter
-neuraloperator (theWell)
-
-
-**to be excluded for code publishing:** 
-
-all from cluster dir
-WandB token 
-cluster training scripts
--> refactor training
-find references to my computer paths, delete ALL and associates
+Run **`data/JHTDB/clustering.ipynb`** and **`data/the_Well/clustering.ipynb`** for data process.

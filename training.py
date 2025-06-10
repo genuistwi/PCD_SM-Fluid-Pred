@@ -23,7 +23,7 @@ torch.set_float32_matmul_precision('medium')
 # --- Config loading ---
 (trainCfg := ConfigParser(work_dir="")).load("./config/config_list.txt")
 trainCfg.WandB = False
-trainCfg.cluster = False
+trainCfg.cluster = True
 
 trainCfg.start()  # unique ID attribution. WARNING: do not redo if loading from checkpoint, messes loggers
 

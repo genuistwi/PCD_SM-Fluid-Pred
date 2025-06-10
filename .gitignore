@@ -7,6 +7,9 @@ data/_pipeline_/*
 data/_cluster_/*
 !data/_cluster_/Notes.md
 
+!storage/models/Notes.md
+!storage/results/Notes.md
+
 # Outputs
 results/theWell_TurbRadLay2D/outputs/*
 results/theWell_MHD64/outputs/*
