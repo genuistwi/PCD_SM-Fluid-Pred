@@ -22,7 +22,7 @@ torch.set_float32_matmul_precision('medium')
 
 # --- Config loading ---
 (trainCfg := ConfigParser(work_dir="")).load("./config/config_list.txt")
-trainCfg.WandB = False
+trainCfg.WandB = False  # Keep to False
 trainCfg.cluster = True
 
 trainCfg.start()  # unique ID attribution. WARNING: do not redo if loading from checkpoint, messes loggers
@@ -39,7 +39,6 @@ EarlyStoppingCb = EarlyStopping(monitor="val_loss", patience=trainCfg.trainingCf
 ckptCb = ModelCheckpoint(trainCfg.ckpt_dir, monitor="val_loss", filename="checkpoint", save_top_k=1, mode="min")
 EMAvgCb = EMACallback(decay=trainCfg.trainingCfg.EMA_rate)  # EMA
 
-# callbacks = [*([WandBLoggerCb] if trainCfg.WandB else []), printLossCb, saveCfgCb, ckptCb, EMAvgCb, EarlyStoppingCb]
 callbacks = [*([WandBLoggerCb] if trainCfg.WandB else []), printLossCb, saveCfgCb, ckptCb, EarlyStoppingCb]
 
 
@@ -47,11 +46,6 @@ callbacks = [*([WandBLoggerCb] if trainCfg.WandB else []), printLossCb, saveCfgC
 dataModule = DataLightningModule(trainCfg, pin_memory=False)  # Fancy dataloader for PyTorch Lightning
 dataModule.prepare_data(force_call=True, export=False)  # Dataloaders set as attributes, memory loaded
 
-# --- Model module ---
-# trainCfg.trainingCfg.batch_size_train = 128
-print('Sever performance impact. Eloss not implemented 3D yet')
-# trainCfg.trainingCfg.batch_size_train = 120
-# trainCfg.trainingCfg.batch_size_valid = 120
 
 model_module = ModelLightningModule(trainCfg, dataModule.trainSet)
 
